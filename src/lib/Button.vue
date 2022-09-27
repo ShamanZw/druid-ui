@@ -1,5 +1,5 @@
 <template>
-  <button class="druid-button" :class="{ [`theme-${theme}`]: theme }">
+  <button class="druid-button" :class="{ [`druid-theme-${theme}`]: theme }">
     <slot />
   </button>
 </template>
@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
