@@ -1,5 +1,5 @@
 <template>
-  <button class="druid-button" :class="classes">
+  <button class="druid-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -20,6 +20,10 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disable: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -43,6 +47,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .druid-button {
   box-sizing: border-box;
   height: $h;
@@ -145,6 +150,22 @@ $red: red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+  &.druid-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.druid-theme-link,
+  &.druid-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
