@@ -22,7 +22,7 @@ export default {
       type: String,
       default: "normal",
     },
-    disable: {
+    disabled: {
       type: Boolean,
       default: false,
     },
